@@ -1,0 +1,200 @@
+*{
+
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#start-slots-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#slots-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap:2em
+}
+
+.start-slot {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slot {
+    width: 200px;
+    height: 300px;
+    box-shadow: inset 0 0 5px 0 black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.card {
+    width: 190px; /* Légèrement plus petit pour s'insérer dans le slot */
+    height: 290px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 140px;
+    background-color: white; /* Pour couvrir le fond du slot */
+}
+.hidden {
+    opacity: 0; /* Rend la carte complètement transparente */
+    /* Ou utiliser 'visibility: hidden;' pour la masquer (mais cela peut affecter le layout) */
+}
+.card {
+    transition: transform 0.2s ease; /* Ajoute une transition douce pour l'effet de transformation */
+    cursor: grab;
+}
+
+.card.dragging {
+    transform: scale(1.1); /* Augmente légèrement la taille de la carte */
+    cursor: grabbing;
+    opacity: 0; /* Rend la carte légèrement transparente pour montrer qu'elle est en train d'être déplacée */
+}
+
+
+.card:active {
+    cursor: grabbing; /* Optionnel: Changez le curseur lorsqu'une carte est en train d'être déplacée */
+}
+
+.card.hidden {
+    opacity: 1; /* Assurez-vous que la carte reste visible pendant le déplacement */
+    visibility: hidden; /* Rend la carte invisible tout en conservant l'espace occupé */
+}
+#start-slots-container div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+
+}
+#slots-container div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+@media (max-width: 1024px){
+
+    .start-slot {
+        width: 100px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slot {
+        width: 100px;
+        height: 150px;
+        box-shadow: inset 0 0 5px 0 black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+    }
+    
+    .card {
+        width: 90px; /* Légèrement plus petit pour s'insérer dans le slot */
+        height: 140px;
+        border-radius: 12px;
+        text-align: center;
+        line-height: 140px;
+        background-color: white; /* Pour couvrir le fond du slot */
+    }
+}
+.bouton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+}
+.explication{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+.explication p{
+    border: 4px solid rgb(119, 0, 255) ;
+    color: rgb(119, 0, 255);
+    padding: 1em;
+}
+.bouton button{
+    width: 300px;
+    height: 50px;
+    padding: 0em 1em;
+    border-radius: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2em;
+   
+}
+#reset-cards{
+    border: 3px solid rgb(119, 0, 255);
+    color: rgb(119, 0, 255);
+    background: white;
+    transition: all 0.5s ease;
+}
+#check-order{
+    border: none;
+    color: white;
+    background: rgb(119, 0, 255);
+    transition: all 0.2s ease;
+}
+#check-order:hover, #reset-cards:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px 0 rgb(156, 156, 156);
+}
+/* Centrage du formulaire de mot de passe */
+.mdp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Centrer les éléments à l'intérieur de .mdp */
+}
+
+/* Style du label */
+.mdp label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Style de l'input */
+.mdp input {
+    width: 100%; /* Utilise toute la largeur disponible */
+    padding: 10px;
+    margin-top: 5px; /* Espace au-dessus de l'input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* S'assure que padding ne dépasse pas la largeur définie */
+}
+
+/* Style du bouton */
+.mdp button {
+    width: 100%; /* Utilise toute la largeur disponible */
+    padding: 10px;
+    margin-top: 10px; /* Espace au-dessus du bouton */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer; /* Change le curseur en main au survol */
+}
+
+.mdp button:hover {
+    background-color: #0056b3; /* Assombrit le bouton lors du survol */
+}
